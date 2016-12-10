@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# kiwi-social
+Rails app that shares a lot of the same features as twitter. 
+>>>>>>> e19789b4755e1b28b81afd2de9f8b65f77d9cb64
