@@ -2,12 +2,7 @@
 
 <% @users.each do |user| %> 
 	<ul class="users">
-		<li>
-			<h3>
-				<%= gravatar_for user, size: 50 %>
-				<%= link_to user.username, user %>
-			</h3>
-		</li>
+		<%= render user %> 
 	</ul>
 <% end %> 
 
