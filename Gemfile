@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'rails_admin'
 
 
 group :development, :test do
