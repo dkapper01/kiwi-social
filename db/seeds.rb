@@ -1,0 +1,1 @@
+# made seeds.rb by myself if anything goes wrong 
