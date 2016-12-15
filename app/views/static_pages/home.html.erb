@@ -22,7 +22,7 @@
  <section class="post_form">
        
 <%= simple_form_for(@post) do |f| %>
-  <div class="field">
+  <div id="homeform">
     <%= f.text_area :content, placeholder: "Compose new post..." %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>

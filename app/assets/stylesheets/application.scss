@@ -187,8 +187,9 @@ aside {
 }
 
 /* forms */
-
-input, textarea, select, .uneditable-input {
+#homeform {
+  
+  input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
@@ -206,6 +207,8 @@ input {
     margin: 0 0 18px 0;
   }
 }
+}
+
 
 
 /* Users index */
