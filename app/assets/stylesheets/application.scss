@@ -80,7 +80,9 @@ p {
   line-height: 1.7em;
 }
 
-
+ol {
+  list-style-type: none;
+}
 /* header */
 
 #logo {
@@ -133,7 +135,7 @@ footer {
 aside {
   section {
     padding: 10px 0;
-    border-top: 1px solid;
+    border-top: 1px solid gray;
     &:first-child {
       border: 0;
       padding-top: 0;
@@ -190,7 +192,7 @@ aside {
 #homeform {
   
   input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
+  border: 1px solid gray;
   width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
@@ -201,7 +203,7 @@ input {
 }
 
 #error_explanation {
-  color: #f00;
+  color: gray;
   ul {
     list-style: none;
     margin: 0 0 18px 0;

@@ -2,39 +2,55 @@
   <div class="row">
     <aside class="col-md-4">
 
+	     <section class="user_info">
+	        <a href="<%= user_path(current_user) %>">
+	  			<%= gravatar_for current_user, size: 52 %>
+			</a>
+			<h1>
+		  		<%= current_user.username %>
+			</h1>
+			<span>
+		  		<%= link_to "view my profile", current_user %>
+			</span>
+			<span>
+		  		<%= pluralize(current_user.posts.count, "post") %>
+			</span>
+	    </section>
 
-      <section class="user_info">
-        <a href="<%= user_path(current_user) %>">
-  <%= gravatar_for current_user, size: 52 %>
-</a>
-<h1>
-  <%= current_user.username %>
-</h1>
-<span>
-  <%= link_to "view my profile", current_user %>
-</span>
-<span>
-  <%= pluralize(current_user.posts.count, "post") %>
-</span>
-      </section>
 
+		<section class="post_form">
+			<%= simple_form_for(@post, html: { multipart: true }) do |f| %>
+			<%= f.error_notification %>
+			  <div id="homeform">
+			    <%= f.text_area :content, placeholder: "Compose new post..." %>
+			  </div>
+			  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+			  <span class="picture">
+			  	 <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+			  </span>
+			<% end %>
 
- <section class="post_form">
-       
-<%= simple_form_for(@post) do |f| %>
-  <div id="homeform">
-    <%= f.text_area :content, placeholder: "Compose new post..." %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-<% end %>
-
-</section>
-
+			<script type="text/javascript">
+			  $('#micropost_picture').bind('change', function() {
+			    var size_in_megabytes = this.files[0].size/1024/1024;
+			    if (size_in_megabytes > 5) {
+			      alert('Maximum file size is 5MB. Please choose a smaller file.');
+			    }
+			  });
+			</script>
+		</section>
 
     </aside>
-  </div>
+    <div class="col-md-6">
+	  	<% if @feed_items.any? %>
+		  <ol class="microposts">
+		    <%= render @feed_items %>
+		  </ol>
+	  		<%= will_paginate @feed_items %>
+		<% end %>
+  	</div>
 
-
+  	</div>
 
 <% else %> 
 	<div class="jumbotron">
